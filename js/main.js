@@ -31,16 +31,13 @@ function getPositiveValue (min){
 }
 
 function getFromTo (min, max) {
-  let myMin;
+  const myMin = getPositiveValue(min);
   let myMax;
 
   // правильно, что ты не доверяешь полученным параметрам, а проверяешь их.
   // однако, лучше оператор if-else выковырять в отдельную функцию
-  if (min < 0) {
-    myMin = 0;
-  } else {
-    myMin = min;
-  }
+  // тогда можно myMin иметь const, это рекомендация.
+
 
   if (max < 0 || max < min) {
     myMax = 10;
