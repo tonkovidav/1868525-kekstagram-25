@@ -63,6 +63,8 @@ function getFromTo (min, max) {
 
 window.console.log(getFromTo (1,100));
 
+// правильно называть функцию сложно для всех нас.
+// по правде придумать название - это главная головная боль разработчика
 function getStringLength (checkString, maxStringLength) {
   if (checkString.length <= maxStringLength) {
     return true;
