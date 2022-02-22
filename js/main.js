@@ -38,8 +38,8 @@ function getFromTo (min, max) {
   // однако, лучше оператор if-else выковырять в отдельную функцию
   // тогда можно myMin иметь const, это рекомендация.
 
-
-  if (max < 0 || max < min) {
+  // теперь яснее видно, что надо сравнивать не с min, а проверенным значением myMin
+  if (max < 0 || max < myMin) {
     myMax = 10;
   } else {
     myMax = max;
