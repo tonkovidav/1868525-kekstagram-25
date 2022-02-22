@@ -32,7 +32,7 @@ function getPositiveValue (min){
 
 function ensureMaxIsGreater(myMin, max){
   if (max < myMin) {
-    throw new Error(`неправильные аргументы. договорились, что min>0 и max> min, а получили ${min}, ${max}`);
+    throw new Error(`неправильные аргументы. договорились, что min>0 и max> min, а получили ${max}`);
   }
   return max;
 }
