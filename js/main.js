@@ -69,6 +69,9 @@ window.console.log(getFromTo (1,100));
 function validateStringLength (checkString, maxStringLength) {
   // тот кто вызывает функцию, может забыть передать параметр, как это выглядит сейчас
   // нельзя доверять - надо проверять
+  if(typeof checkString !== 'string'){
+    throw new Error(`неверный тип аргумента checkString. хочу строку, получила: ${typeof checkString}: ${checkString}`);
+  }
   if (checkString.length <= maxStringLength) {
     return true;
   }
