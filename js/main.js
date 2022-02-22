@@ -30,6 +30,7 @@ function getFromTo (min, max) {
   let myMin;
   let myMax;
 
+  // правильно, что ты не доверяешь полученным параметрам, а проверяешь их.
   if (min < 0) {
     myMin = 0;
   } else {
