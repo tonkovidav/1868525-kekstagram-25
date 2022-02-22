@@ -26,6 +26,10 @@
 //   }
 // }
 
+function getPositiveValue (min){
+  return min<0?0:min;
+}
+
 function getFromTo (min, max) {
   let myMin;
   let myMax;
