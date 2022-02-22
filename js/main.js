@@ -53,6 +53,9 @@ function getFromTo (min, max) {
   // а переменную myMax сделать неизменяемой
   const myMax = ensureMaxIsGreater(myMin, max);
 
+  // проблема в том, что Math.random не использует никаких аргументов
+  // JavaScript такая хитрая штука, что позволяет позвать функцию с лишним
+  // количеством аргументов.
   return Math.random(myMin, myMax);
 }
 
