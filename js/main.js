@@ -26,7 +26,7 @@
 //   }
 // }
 
-const getFromTo(min, max) {
+function getFromTo (min, max) {
   let myMin;
   let myMax;
 
@@ -45,7 +45,9 @@ const getFromTo(min, max) {
   return Math.random(myMin, myMax);
 }
 
-const getStringLength(checkString, maxStringLength) {
+getFromTo (1,100);
+
+function getStringLength (checkString, maxStringLength) {
   if (checkString.length <= maxStringLength) {
     return true;
   }
@@ -53,3 +55,4 @@ const getStringLength(checkString, maxStringLength) {
     return false;
   }
 }
+getStringLength ();
