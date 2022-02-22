@@ -61,7 +61,7 @@ function getFromTo (min, max) {
   return (scalar * Math.random()) + myMin;
 }
 
-getFromTo (1,100);
+window.console.log(getFromTo (1,100));
 
 function getStringLength (checkString, maxStringLength) {
   if (checkString.length <= maxStringLength) {
