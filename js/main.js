@@ -72,6 +72,9 @@ function validateStringLength (checkString, maxStringLength) {
   if(typeof checkString !== 'string'){
     throw new Error(`неверный тип аргумента checkString. хочу строку, получила: ${typeof checkString}: ${checkString}`);
   }
+  if(typeof maxStringLength !== 'number' || maxStringLength<0){
+    throw new Error(`неверный аргумент maxStringLength. хочу положительное число, получила: ${typeof maxStringLength}: ${maxStringLength}`);
+  }
   if (checkString.length <= maxStringLength) {
     return true;
   }
