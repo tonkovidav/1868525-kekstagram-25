@@ -1,58 +1,28 @@
-// function getFromTo(min, max) {
-//   let myMin;
-//   let myMax;
-
-//   if (min < 0) {
-//     myMin = 0;
-//   } else {
-//     myMin = min;
-//   }
-
-//   if (max < 0 || max < min) {
-//     myMax = 10;
-//   } else {
-//     myMax = max;
-//   }
-
-//   let rndNum = Math.random(0, 100);
-
-//   while(rndNum < min || rndNum > max) {
-//     if (rndNum >= myMin && rndNum <= myMax) {
-//       return rndNum;
-//       break;
-//     } else {
-//       rndNum = Math.random(0, 100);
-//     }
-//   }
-// }
-
+function getPositiveValue (min){
+  return min<0?0:min;
+}
+function ensureMaxIsGreater(myMin, max){
+  if (max < myMin) {
+    throw new Error(`неправильные аргументы. договорились, что min>0 и max> min, а получили ${max}`);
+  }
+  return max;
+}
 function getFromTo (min, max) {
-  let myMin;
-  let myMax;
-
-  if (min < 0) {
-    myMin = 0;
-  } else {
-    myMin = min;
-  }
-
-  if (max < 0 || max < min) {
-    myMax = 10;
-  } else {
-    myMax = max;
-  }
-
-  return Math.random(myMin, myMax);
+  const myMin = getPositiveValue(min);
+  const myMax = ensureMaxIsGreater(myMin, max);
+  const scalar = myMax - myMin;
+  return (scalar * Math.random()) + myMin;
 }
+window.console.log(getFromTo (1,100));
 
-getFromTo (1,100);
-
-function getStringLength (checkString, maxStringLength) {
-  if (checkString.length <= maxStringLength) {
-    return true;
+function validateStringLength (checkString, maxStringLength) {
+  if(typeof checkString !== 'string'){
+    throw new Error(`неверный тип аргумента checkString. хочу строку, получила: ${typeof checkString}: ${checkString}`);
   }
-  else {
-    return false;
+  if(typeof maxStringLength !== 'number' || maxStringLength<0){
+    throw new Error(`неверный аргумент maxStringLength. хочу положительное число, получила: ${typeof maxStringLength}: ${maxStringLength}`);
   }
+  return checkString.length <= maxStringLength;
 }
-getStringLength ();
+window.console.log(validateStringLength('хорошая строка', 1000));
+window.console.log(validateStringLength('плохая строка', 5));
