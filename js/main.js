@@ -30,6 +30,13 @@ function getPositiveValue (min){
   return min<0?0:min;
 }
 
+function ensureMaxIsGreater(myMin, max){
+  if (max < myMin) {
+    throw new Error(`неправильные аргументы. договорились, что min>0 и max> min, а получили ${min}, ${max}`);
+  }
+  return max;
+}
+
 function getFromTo (min, max) {
   const myMin = getPositiveValue(min);
   let myMax;
@@ -42,6 +49,7 @@ function getFromTo (min, max) {
   // дополнительно, мы сможем вынести это правило в отдельную
   // хотя сначала обратим внимание, что myMin, в общем-то может быть больше 10, (11, например).
   // Если это так, то у нас нет возможности правильно обслужить запрос.
+  // в таком виде мы можем унести правило в отдельную функцию
   if (max < myMin) {
     throw new Error(`неправильные аргументы. договорились, что min>0 и max> min, а получили ${min}, ${max}`);
   } else {
