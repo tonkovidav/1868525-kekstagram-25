@@ -67,6 +67,7 @@ window.console.log(getFromTo (1,100));
 // по правде придумать название - это главная головная боль разработчика
 // но эта функция больше похожа на "контроль по длине"
 function validateStringLength (checkString, maxStringLength) {
+  // тот кто вызывает функцию, может забыть передать параметр, как это выглядит сейчас
   if (checkString.length <= maxStringLength) {
     return true;
   }
