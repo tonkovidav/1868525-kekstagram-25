@@ -58,7 +58,7 @@ function getFromTo (min, max) {
   // количеством аргументов.
   // чтобы сделать случайное число в интервале нужно "отмасштабировать" случайное число и подвинуть его.
   const scalar = myMax - myMin;
-  return Math.random(myMin, myMax);
+  return (scalar * Math.random()) + myMin;
 }
 
 getFromTo (1,100);
