@@ -79,4 +79,7 @@ function validateStringLength (checkString, maxStringLength) {
   // а теперь яснее видно, что нужно вернуть прямо результат сравнения
   return checkString.length <= maxStringLength;
 }
+window.console.log(validateStringLength('хорошая строка', 1000));
+window.console.log(validateStringLength('плохая строка', 5));
+
 validateStringLength ();
