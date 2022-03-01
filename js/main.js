@@ -1,4 +1,4 @@
-function getPositiveValue (min){
+function getPositiveValue (min) {
   return min<0?0:min;
 }
 function ensureMaxIsGreater(myMin, max){
@@ -18,3 +18,4 @@ window.console.log(getFromTo (1,100));
 function checkStringLength (string, length) {
   return string.length <= length;
 }
+window.console.log (checkStringLength (110, 150));
