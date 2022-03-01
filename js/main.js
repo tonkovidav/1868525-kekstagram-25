@@ -15,14 +15,6 @@ function getFromTo (min, max) {
 }
 window.console.log(getFromTo (1,100));
 
-function validateStringLength (checkString, maxStringLength) {
-  if(typeof checkString !== 'string'){
-    throw new Error(`неверный тип аргумента checkString. хочу строку, получила: ${typeof checkString}: ${checkString}`);
-  }
-  if(typeof maxStringLength !== 'number' || maxStringLength<0){
-    throw new Error(`неверный аргумент maxStringLength. хочу положительное число, получила: ${typeof maxStringLength}: ${maxStringLength}`);
-  }
-  return checkString.length <= maxStringLength;
+function checkStringLength (string, length) {
+  return string.length <= length;
 }
-window.console.log(validateStringLength('хорошая строка', 1000));
-window.console.log(validateStringLength('плохая строка', 5));
