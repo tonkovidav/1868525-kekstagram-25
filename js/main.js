@@ -98,22 +98,22 @@ const profileNames = [
 ];
 
 const getArrayElements = (elements) => {
-  return elements[getRandomPositiveInteger(0, elements.length - 1)];
+  elements[getRandomPositiveInteger(0, elements.length - 1)];
 };
 
 const createComment = () => {
-  return {
-    id:getRandomPositiveInteger (1,282) ,
-    avatar: getArrayElements (commentsAvatars),
-    message: getArrayElements (messages),
-    name: getArrayElements (profileNames)
+  {
+    id:getRandomPositiveInteger (1,282);
+    avatar: getArrayElements (commentsAvatars);
+    message: getArrayElements (messages);
+    name: getArrayElements (profileNames);
   };
 };
 
 const createPost = () => {
   {
     id: getRandomPositiveInteger (0, 25),
-    url: getArrayElements (url);
+    url; getArrayElements (url);
     description: getArrayElements (description);
     likes: getRandomPositiveInteger (15, 200);
     comments: createComment ()
