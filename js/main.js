@@ -65,8 +65,9 @@ const profileNames = [
 ];
 
 const getRandomArrayElement = (elements) => {
-  elements[getRandomPositiveInteger(0, elements.length - 1)];
+  elements[getRandomPositiveInteger(0, elements.length - 1)]
 };
+getRandomArrayElement (urls);
 
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
