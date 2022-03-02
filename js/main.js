@@ -43,7 +43,6 @@ const description = [
 ];
 
 const commentsAvatars = Array.from({length:6}, (_,ix)=>`img/avatar-${1+ix}.svg`);
-;
 
 const messages = [
   'Всё отлично!',
@@ -66,14 +65,14 @@ const profileNames = [
 ];
 
 const getRandomArrayElement = (elements) => {
-  return elements[getRandomPositiveInteger(0, elements.length - 1)];
+  elements[getRandomPositiveInteger(0, elements.length - 1)];
 };
 
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
   avatar: getRandomArrayElement (commentsAvatars),
   message: getRandomArrayElement (messages),
-  name: getRandomArrayElement (messages),
+  name: getRandomArrayElement (profileNames),
 });
 
 const createPost = () => ({
