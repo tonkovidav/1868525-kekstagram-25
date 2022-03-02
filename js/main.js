@@ -97,21 +97,17 @@ const profileNames = [
   'Юлия'
 ];
 
-const getArrayElements = (elements) => ({
-   elements = [getRandomPositiveInteger(0,elements.length - 1)];
-});
-
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
-  avatar: getArrayElements (commentsAvatars),
-  message: getArrayElements (messages),
-  name: getArrayElements (profileNames),
+  avatar: commentsAvatars[getRandomPositiveInteger(0,commentsAvatars.length - 1)],
+  message: messages[getRandomPositiveInteger(0,messages.length - 1)],
+  name: profileNames[getRandomPositiveInteger(0,profileNames.length - 1)],
 });
 
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
-  url: getArrayElements (urls),
-  description: getArrayElements (description),
+  url: urls[getRandomPositiveInteger(0,urls.length - 1)],
+  description: description[getRandomPositiveInteger(0,description.length - 1)],
   likes: getRandomPositiveInteger (15,200),
   comments: createComment ()
 });
