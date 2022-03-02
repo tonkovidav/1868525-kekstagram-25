@@ -97,9 +97,9 @@ const profileNames = [
   'Юлия'
 ];
 
-const getArrayElements = (elements) => {
-  return elements = [getRandomPositiveInteger(0,elements.length - 1)];
-};
+const getArrayElements = (elements) => ({
+   elements = [getRandomPositiveInteger(0,elements.length - 1)];
+});
 
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
