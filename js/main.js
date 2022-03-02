@@ -98,7 +98,7 @@ const profileNames = [
 ];
 
 const getArrayElements = (elements) => {
-  elements[getRandomPositiveInteger(0,elements.length - 1)];
+  return elements = [getRandomPositiveInteger(0,elements.length - 1)];
 };
 
 const createComment = () => ({
@@ -106,7 +106,7 @@ const createComment = () => ({
   avatar: getArrayElements (commentsAvatars),
   message: getArrayElements (messages),
   name: getArrayElements (profileNames),
-  });
+});
 
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
