@@ -107,16 +107,16 @@ const createComment = () => {
     avatar: getArrayElements (commentsAvatars),
     message: getArrayElements (messages),
     name: getArrayElements (profileNames)
-  }
+  };
 };
 
 const createPost = () => {
-  return {
-    id: getRandomPositiveInteger (0,25),
-    url: getArrayElements (url),
-    description: getArrayElements (description),
-    likes: getRandomPositiveInteger (15,200),
+  {
+    id: getRandomPositiveInteger (0, 25),
+    url: getArrayElements (url);
+    description: getArrayElements (description);
+    likes: getRandomPositiveInteger (15, 200);
     comments: createComment ()
-  }
+  };
 };
 createPost ();
