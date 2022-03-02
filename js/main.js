@@ -64,11 +64,7 @@ const profileNames = [
   'Юлия'
 ];
 
-const getRandomArrayElement = (elements) => {
-  elements[getRandomPositiveInteger(0, elements.length - 1)]
-};
-getRandomArrayElement (urls);
-
+const getRandomArrayElement = (elements) => elements [getRandomPositiveInteger(0, elements.length - 1)];
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
   avatar: getRandomArrayElement (commentsAvatars),
