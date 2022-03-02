@@ -30,7 +30,7 @@ window.console.log (checkStringLength (110, 150));
 
 // module4-task1
 
-const url = [
+const urls = [
   'photos/1.jpg',
   'photos/2.jpg',
   'photos/3.jpg',
@@ -101,22 +101,19 @@ const getArrayElements = (elements) => {
   elements[getRandomPositiveInteger(0, elements.length - 1)];
 };
 
-const createComment = () => {
-  {
-    id:getRandomPositiveInteger (1,282);
-    avatar: getArrayElements (commentsAvatars);
-    message: getArrayElements (messages);
-    name: getArrayElements (profileNames);
-  };
-};
+const createComment = () => ({
+    id: getRandomPositiveInteger (1,282),
+    avatar: getArrayElements (commentsAvatars),
+    message: getArrayElements (messages),
+    name: getArrayElements (profileNames),
+  })
 
-const createPost = () => {
-  {
+const createPost = () => ({
     id: getRandomPositiveInteger (0, 25),
-    url; getArrayElements (url);
-    description: getArrayElements (description);
-    likes: getRandomPositiveInteger (15, 200);
+    url: getArrayElements (urls),
+    description: getArrayElements (description),
+    likes: getRandomPositiveInteger (15,200),
     comments: createComment ()
-  };
-};
+})
+
 createPost ();
