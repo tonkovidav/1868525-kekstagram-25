@@ -30,33 +30,7 @@ window.console.log (checkStringLength (110, 150));
 
 // module4-task1
 
-const urls = [
-  'photos/1.jpg',
-  'photos/2.jpg',
-  'photos/3.jpg',
-  'photos/4.jpg',
-  'photos/5.jpg',
-  'photos/6.jpg',
-  'photos/7.jpg',
-  'photos/8.jpg',
-  'photos/9.jpg',
-  'photos/10.jpg',
-  'photos/11.jpg',
-  'photos/12.jpg',
-  'photos/13.jpg',
-  'photos/14.jpg',
-  'photos/15.jpg',
-  'photos/16.jpg',
-  'photos/17.jpg',
-  'photos/18.jpg',
-  'photos/19.jpg',
-  'photos/20.jpg',
-  'photos/21.jpg',
-  'photos/22.jpg',
-  'photos/23.jpg',
-  'photos/24.jpg',
-  'photos/25.jp'
-];
+const urls = Array.from({length: 25}, (_,ix)=>`photos/${1+ix}.jpg`);
 
 const description = [
   'Свадедное фото',
@@ -68,14 +42,8 @@ const description = [
   'Тренировка'
 ];
 
-const commentsAvatars = [
-  'img/avatar-1.svg',
-  'img/avatar-2.svg',
-  'img/avatar-3.svg',
-  'img/avatar-4.svg',
-  'img/avatar-5.svg',
-  'img/avatar-6.svg'
-];
+const commentsAvatars = Array.from({length:6}, (_,ix)=>`img/avatar-${1+ix}.svg`);
+;
 
 const messages = [
   'Всё отлично!',
@@ -97,17 +65,21 @@ const profileNames = [
   'Юлия'
 ];
 
+const getRandomArrayElement = (elements) => {
+  return elements[getRandomPositiveInteger(0, elements.length - 1)];
+};
+
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
-  avatar: commentsAvatars[getRandomPositiveInteger(0,commentsAvatars.length - 1)],
-  message: messages[getRandomPositiveInteger(0,messages.length - 1)],
-  name: profileNames[getRandomPositiveInteger(0,profileNames.length - 1)],
+  avatar: getRandomArrayElement (commentsAvatars),
+  message: getRandomArrayElement (messages),
+  name: getRandomArrayElement (messages),
 });
 
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
-  url: urls[getRandomPositiveInteger(0,urls.length - 1)],
-  description: description[getRandomPositiveInteger(0,description.length - 1)],
+  url: getRandomArrayElement (urls),
+  description: getRandomArrayElement (description),
   likes: getRandomPositiveInteger (15,200),
   comments: createComment ()
 });
