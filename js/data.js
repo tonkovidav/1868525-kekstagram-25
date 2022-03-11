@@ -33,12 +33,37 @@ const profileNames = [
   'Светлана',
   'Юлия'
 ];
+
+/**
+ * @typedef {object} Comment
+ * @property {string} avatar
+ * @property {string} message
+ * @property {string} name
+ */
+
+/**
+ *
+ * @returns {Comment}
+ */
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
   avatar: getRandomArrayElement (commentsAvatars),
   message: getRandomArrayElement (messages),
   name: getRandomArrayElement (profileNames),
 });
+
+/**
+ * @typedef {object} Post
+ * @property {number} id
+ * @property {string} url
+ * @property {string} description
+ * @property {number} likes
+ */
+
+/**
+ *
+ * @returns {Post}
+ */
 
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
