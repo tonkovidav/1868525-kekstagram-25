@@ -58,6 +58,7 @@ const createComment = () => ({
  * @property {string} url
  * @property {string} description
  * @property {number} likes
+ * @property {Comment[]} comments
  */
 
 /**
@@ -70,6 +71,6 @@ const createPost = () => ({
   url: getRandomArrayElement (urls),
   description: getRandomArrayElement (description),
   likes: getRandomPositiveInteger (15,200),
-  comments: createComment ()
+  comments: Array.from({length: getRandomPositiveInteger(1,7)},createComment ),
 });
 export {createPost};
