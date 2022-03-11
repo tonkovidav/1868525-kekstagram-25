@@ -37,6 +37,6 @@ export const renderPhotoList = (template, photos)=>photos.map((item)=>initPhotoE
  */
 export const wrapElements = (elements)=> {
   const fragment = document.createDocumentFragment();
-  fragment.append(elements);
+  fragment.append(...elements);
   return fragment;
 };

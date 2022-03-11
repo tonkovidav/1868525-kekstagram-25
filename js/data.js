@@ -1,5 +1,5 @@
-import {getRandomArrayElement} from './util.js';
-import {getRandomPositiveInteger} from './util.js';
+import {getRandomArrayElement, getRandomPositiveInteger} from './utils.js';
+
 const urls = Array.from({length: 25}, (_,ix)=>`photos/${1+ix}.jpg`);
 
 const description = [

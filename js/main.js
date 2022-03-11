@@ -2,6 +2,7 @@ import {createPost} from './data.js';
 import { render, renderPhotoList, wrapElements } from './render.js';
 const IMAGE_TEMPLATE_ID = '#picture';
 const IMAGE_ITEM_SELECTOR = '.picture';
+const IMAGES_CONTAINER_SELECTOR ='.pictures';
 /**
  *
  * @returns {HTMLElement}
@@ -28,7 +29,13 @@ const getImageElementFromTemplate = ()=>{
  *
  * @returns {HTMLElement}
  */
-const getPictureListContainer = () => document.querySelector(IMAGE_ITEM_SELECTOR);
+const getPictureListContainer = () => {
+  const element = document.querySelector(IMAGES_CONTAINER_SELECTOR);
+  if(!element){
+    throw new Error('not found');
+  }
+  return element;
+};
 
 const posts = Array.from({length:10}, createPost);
 
