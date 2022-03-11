@@ -1,5 +1,5 @@
-import {getRandomArrayElement} from './util.js';
-import {getRandomPositiveInteger} from './util.js';
+import {getRandomArrayElement, getRandomPositiveInteger} from './utils.js';
+
 const urls = Array.from({length: 25}, (_,ix)=>`photos/${1+ix}.jpg`);
 
 const description = [
@@ -33,6 +33,18 @@ const profileNames = [
   'Светлана',
   'Юлия'
 ];
+
+/**
+ * @typedef {object} Comment
+ * @property {string} avatar
+ * @property {string} message
+ * @property {string} name
+ */
+
+/**
+ *
+ * @returns {Comment}
+ */
 const createComment = () => ({
   id: getRandomPositiveInteger (1,282),
   avatar: getRandomArrayElement (commentsAvatars),
@@ -40,11 +52,25 @@ const createComment = () => ({
   name: getRandomArrayElement (profileNames),
 });
 
+/**
+ * @typedef {object} Post
+ * @property {number} id
+ * @property {string} url
+ * @property {string} description
+ * @property {number} likes
+ * @property {Comment[]} comments
+ */
+
+/**
+ *
+ * @returns {Post}
+ */
+
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
   url: getRandomArrayElement (urls),
   description: getRandomArrayElement (description),
   likes: getRandomPositiveInteger (15,200),
-  comments: createComment ()
+  comments: Array.from({length: getRandomPositiveInteger(1,7)},createComment ),
 });
 export {createPost};
