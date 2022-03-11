@@ -21,6 +21,7 @@ const initPhotoElement = (photoElement, photo)=>{
   photoElement.querySelector('.picture__img').src = url;
   photoElement.querySelector('.picture__likes').textContent = likes;
   photoElement.querySelector('.picture__comments').textContent = comments.length;
+  return photoElement;
 };
 
 /**
@@ -29,3 +30,14 @@ const initPhotoElement = (photoElement, photo)=>{
  * @param {Post[]} photos
  */
 export const renderPhotoList = (template, photos)=>photos.map((item)=>initPhotoElement(template.cloneNode(true), item));
+
+/**
+ *
+ * @param {HTMLElement[]} elements
+ * @returns {DocumentFragment}
+ */
+export const wrapElements = (elements)=> {
+  const fragment = document.createDocumentFragment();
+  fragment.append(elements);
+  return fragment;
+};
