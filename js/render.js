@@ -1,3 +1,6 @@
+const PICTURE_IMG = '.picture__img';
+const PICTURE_LIKES = '.picture__likes';
+const PICTURE_COMMENTS = '.picture__comments';
 /**
  *
  * @param {HTMLElement} container
@@ -14,9 +17,9 @@ export const render = (container, element)=>{
  */
 const initPhotoElement = (photoElement, photo)=>{
   const {comments,url,likes} = photo;
-  photoElement.querySelector('.picture__img').src = url;
-  photoElement.querySelector('.picture__likes').textContent = likes;
-  photoElement.querySelector('.picture__comments').textContent = comments.length;
+  photoElement.querySelector(PICTURE_IMG).src = url;
+  photoElement.querySelector(PICTURE_LIKES).textContent = likes;
+  photoElement.querySelector(PICTURE_COMMENTS).textContent = comments.length;
   return photoElement;
 };
 
