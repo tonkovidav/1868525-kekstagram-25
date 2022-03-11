@@ -1,14 +1,6 @@
-import {createPost} from './data.js';
 const picturesList = document.querySelector('.pictures');
-const userPhotos = createPost (25);
-const template = document.querySelector('#picture').content.querySelector('.picture');
 const photoFragment = document.createDocumentFragment ();
-userPhotos.forEach(({url, likes, comments}) => {
-  const photoElement = template.cloneNode(true);
-  photoElement.querySelector('.picture__img').src = url;
-  photoElement.querySelector('.picture__likes').textContent = likes;
-  photoElement.querySelector('.picture__comments').textContent = [comments];
-});
+
 picturesList.appendChild(photoFragment);
 /**
  *
@@ -22,11 +14,18 @@ export const render = (container, element)=>{
 /**
  *
  * @param {HTMLElement} photoElement
- * @param {import('./data').Post} data
+ * @param {import('./data').Post} photo
  */
-export const initPhotoElement = (photoElement, data)=>{
-  const {comments,url,likes} = data;
+const initPhotoElement = (photoElement, photo)=>{
+  const {comments,url,likes} = photo;
   photoElement.querySelector('.picture__img').src = url;
   photoElement.querySelector('.picture__likes').textContent = likes;
   photoElement.querySelector('.picture__comments').textContent = comments.length;
 };
+
+/**
+ *
+ * @param {HTMLElement} template
+ * @param {Post[]} photos
+ */
+export const renderPhotoList = (template, photos)=>photos.map((item)=>initPhotoElement(template.cloneNode(true), item));
