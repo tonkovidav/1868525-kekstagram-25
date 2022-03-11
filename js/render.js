@@ -18,3 +18,11 @@ picturesList.appendChild(photoFragment);
 export const render = (container, element)=>{
   container.appendChild(element);
 };
+
+/**
+ *
+ * @param {HTMLElement} photoElement
+ */
+export const initPhotoElement = (photoElement)=>{
+
+}

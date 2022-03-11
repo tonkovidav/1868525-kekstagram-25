@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
 function getRandomPositiveInteger (a, b) {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
