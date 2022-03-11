@@ -10,3 +10,11 @@ userPhotos.forEach(({url, likes, comments}) => {
   photoElement.querySelector('.picture__comments').textContent = [comments];
 });
 picturesList.appendChild(photoFragment);
+/**
+ *
+ * @param {HTMLElement} container
+ * @param {HTMLElement} element
+ */
+export const render = (container, element)=>{
+  container.appendChild(element);
+};
