@@ -1,4 +1,5 @@
 import {createPost} from './data.js';
+import { render, renderPhotoList, wrapElements } from './render.js';
 const IMAGE_TEMPLATE_ID = '#picture';
 const IMAGE_ITEM_SELECTOR = '.picture';
 /**
@@ -31,4 +32,11 @@ const getPictureListContainer = () => document.querySelector('.pictures');
 
 const posts = Array.from({length:10}, createPost);
 
-
+render(
+  getPictureListContainer(),
+  wrapElements(
+    renderPhotoList(
+      getImageElementFromTemplate(),
+      posts),
+  ),
+);
