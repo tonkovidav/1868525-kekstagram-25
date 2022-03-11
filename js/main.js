@@ -28,7 +28,7 @@ const getImageElementFromTemplate = ()=>{
  *
  * @returns {HTMLElement}
  */
-const getPictureListContainer = () => document.querySelector('.pictures');
+const getPictureListContainer = () => document.querySelector(IMAGE_ITEM_SELECTOR);
 
 const posts = Array.from({length:10}, createPost);
 
