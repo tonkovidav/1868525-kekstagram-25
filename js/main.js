@@ -1,7 +1,10 @@
 import {createPost} from './data.js';
 const IMAGE_TEMPLATE_ID = '#picture';
 const IMAGE_ITEM_SELECTOR = '.picture';
-
+/**
+ *
+ * @returns {HTMLElement}
+ */
 const getImageElementFromTemplate = ()=>{
   /**
    * @type {HTMLTemplateElement}
@@ -20,4 +23,10 @@ const getImageElementFromTemplate = ()=>{
   return element.cloneNode(true);
 };
 
-createPost ();
+/**
+ *
+ * @returns {HTMLElement}
+ */
+const getPhotosContainer = () => document.querySelector('.pictures');
+
+const posts = Array.from({length:10}, createPost);
