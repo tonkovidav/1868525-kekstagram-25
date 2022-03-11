@@ -1,7 +1,3 @@
-const picturesList = document.querySelector('.pictures');
-const photoFragment = document.createDocumentFragment ();
-
-picturesList.appendChild(photoFragment);
 /**
  *
  * @param {HTMLElement} container
