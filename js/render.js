@@ -22,7 +22,11 @@ export const render = (container, element)=>{
 /**
  *
  * @param {HTMLElement} photoElement
+ * @param {import('./data').Post} data
  */
-export const initPhotoElement = (photoElement)=>{
-
-}
+export const initPhotoElement = (photoElement, data)=>{
+  const {comments,url,likes} = data;
+  photoElement.querySelector('.picture__img').src = url;
+  photoElement.querySelector('.picture__likes').textContent = likes;
+  photoElement.querySelector('.picture__comments').textContent = comments.length;
+};
