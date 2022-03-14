@@ -1,5 +1,5 @@
-import {getRandomArrayElement} from './util.js';
-import {getRandomPositiveInteger} from './util.js';
+import {getRandomArrayElement, getRandomPositiveInteger} from './utils.js';
+
 const urls = Array.from({length: 25}, (_,ix)=>`photos/${1+ix}.jpg`);
 
 const description = [
@@ -39,12 +39,11 @@ const createComment = () => ({
   message: getRandomArrayElement (messages),
   name: getRandomArrayElement (profileNames),
 });
-
 const createPost = () => ({
   id: getRandomPositiveInteger (0, 25),
   url: getRandomArrayElement (urls),
   description: getRandomArrayElement (description),
   likes: getRandomPositiveInteger (15,200),
-  comments: createComment ()
+  comments: Array.from({length: getRandomPositiveInteger(1,7)},createComment ),
 });
 export {createPost};
