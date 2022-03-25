@@ -1,4 +1,4 @@
-import { showBigPicture } from './fullPhoto.js';
+import { showBigPicture } from './full-photo.js';
 
 const PICTURE_IMG = '.picture__img';
 const PICTURE_LIKES = '.picture__likes';
