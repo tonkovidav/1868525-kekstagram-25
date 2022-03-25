@@ -62,11 +62,4 @@ if (showBigPicture) {
     }
   });
 }
-if (!showBigPicture) {
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      evt.preventDefault();
-      bigPictureContainer.classList.add('hidden');
-    }
-  });
-}
+
