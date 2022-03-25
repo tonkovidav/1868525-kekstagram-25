@@ -33,11 +33,13 @@ const bigPictureCommentsCount = bigPictureContainer.querySelector ('.social__com
 const bigPictureCommentsLoader = bigPictureContainer.querySelector ('.comments-loader');
 const bidPictureCloseButton = document.querySelector ('.big-picture__cancel');
 
+const clearCommentsContent = (element)=>{element.innerHTML = '';};
+
 export const renderBigPicture = (data) => {
   bigPicture.src = data.url;
   bigPictureLikes.textContent = data.likes;
   bigPictureCommentsNum.textContent = data.comments.length;
-  bigPictureComments.innerHTML = '';
+  clearCommentsContent(bigPictureComments);
   const commentList = renderCommentsList (getCommentTemplate(), data.comments);
   commentList.forEach((item) => bigPictureComments.appendChild(item));
 };
