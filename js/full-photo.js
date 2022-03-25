@@ -43,6 +43,12 @@ export const renderBigPicture = (data) => {
   const commentList = renderCommentsList (getCommentTemplate(), data.comments);
   commentList.forEach((item) => bigPictureComments.appendChild(item));
 };
+const createEscapeHandler = (popup)=>(evt)=>{
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    popup.classList.add('hidden');
+  }
+};
 export const showBigPicture = () => {
   bigPictureContainer.classList.remove('hidden');
   bigPictureCommentsCount.classList.add('hidden');
